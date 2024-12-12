@@ -1,0 +1,14 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: |
+      sudo bash setup.sh
+      sudo systemctl start docker
+      sudo systemctl start pterodactyl
+    command: |
+      echo "Pterodactyl Panel is ready! Access it via http://localhost:8080"
+
+ports:
+  - port: 8080
+    onOpen: open-preview
